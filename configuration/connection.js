@@ -12,3 +12,11 @@ export const sequelize = new Sequelize (
     }
 );
 
+export async function connectDB(){
+    try{
+        const connectedDB = await sequelize.sync();
+        console.log("Connection successful");
+    } catch (error) {
+        console.log({error: error.message});
+    }
+}
