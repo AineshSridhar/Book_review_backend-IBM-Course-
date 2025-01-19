@@ -8,5 +8,5 @@ export function decodeToken(token){
 }
 
 export function createToken(user_id, username){
-    return jwt.sign({user_id: username}, process.env.TOKEN_SECRET_KEY)
+    return jwt.sign({user_id, username}, process.env.TOKEN_SECRET_KEY)
 }
